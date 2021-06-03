@@ -77,8 +77,21 @@ All output files generated will be saved automatically within the aforementioned
 
 # Examples
 
-* N-q / N-dutycycle stability phase diagrams (comparing different modes)
-* cos/rechteck/puls -> duty cycle
+* Cloud radius: Plotted against beta (a) for all q-values (b) filtered for q = 0.1 and plotted against q-values (c) for all beta (d) filtered for one beta value. As one can see, beta has little impact on the cloud radius (and therefore ion density) whereas q-value has a significant impact on ion density.
+<img src="https://user-images.githubusercontent.com/66386520/120635985-616dd780-c46d-11eb-8948-ea7e6044ca0d.png" width="70%" height="70%">
+
+* Cloud stability: Phase diagram of all simulated q and beta values for (a) no magnetic field and (b) a static magnetic field. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions.
+
+
+* Ion density: Ion amount within the relevant target area plotted against beta (a) for all q-values (b) filtered for q = 0.1. Ion amount plotted against q (c) for all beta values (d) filtered for fixed beta value.
+ <img src="https://user-images.githubusercontent.com/66386520/120636121-8a8e6800-c46d-11eb-849c-3ce6a4d881e2.png" width="70%" height="70%">
+ 
+ * Duty cycle: When operating in dipole-pulse-mode with varying pause durations between pulses, the q-value no longer accurately describes the system. For this mode, the duty cycle is introduced and defined as (pause_duration - 1e-6) / (pause_duration + pulse_duration). However, since the dipole mode still utilizes a variation of frequency values (which are also used to vary q-values) and fixed timestep values (delta_t) to calculate period durations, resulting duty cycles are merely skewed q-values. This is illustrated graphically below. Therefore, we are going to use q-values even for dipole simulations for the purpose of comparing different modes stabilities. 
+ <img src="https://user-images.githubusercontent.com/66386520/120638922-10f87900-c471-11eb-8264-d24057469420.png" width="70%" height="70%">
+ 
+ * Comparing cloud stability: All simulated combinations of beta and q values drawn in a phase diagram for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions.
+
+* Comparing cloud density: Ion amount within the relevant target area plotted against q-values with fixed beta for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern.
 
 ## Work in progress: Electron simulation
 
