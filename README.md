@@ -13,13 +13,13 @@ The file is separated into two main functions:
 1. Simulation: The equations of motion are solved for all ions, their trajectories as well as the total energy of the system may be plotted, and results are saved in a text file.
 2. Evaluation: This reads the text file containing the relevant simulation results and offers several commonly used phase diagram plots, which allows the evaluation and comparison of different parameters' impact on the stability of the ion cloud.
 
-These two functions can be turned on or off individually in lines X and Y. The evaluation function checks for an existing results text file for the combination of parameters specified in the settings. As such, evaluation will fail when the simulation function is skipped **and** no relevant results from previous simulations exist. 
+These two functions can be turned on or off individually in the Evaluation settings under the General tab. The evaluation function checks for an existing results text file for the combination of parameters specified in the settings. As such, evaluation will fail when the simulation function is skipped **and** no relevant results from previous simulations exist. 
 
 The two main functions shall be discussed in more detail in the following sections and many of the most commonly used operating modes illustrated with example results.
 
 # Folder structure
 
-The results of any given simulation and/or evaluation are automatically stored in a file path that specifies the operating mode and parameters used. If the file path already exists, new results will be added and existing simulations with identical settings will be overwritten. The text file "results_complete.txt" will never be overwritten and new simulation results are automatically appended to this file. 
+The results of any given simulation and/or evaluation are automatically stored in a file path that specifies the operating mode and parameters used. If the file path already exists, new results will be added and existing simulations with identical settings will be overwritten. The text file "results_complete.txt" will never be overwritten and new simulation results are automatically appended to this file (even duplicates).
 
 ## The Simulation
 
@@ -53,12 +53,14 @@ In addition to that, many more output options are available and can be activated
 
 # Examples
 
-* 2D/3D ion clouds (quad/oct?) (stable/unstable)
+* 2D/3D ion clouds: (a) stable 2D ion cloud (b) unstable 2D ion cloud (c) & (d) stable 3D ion cloud from two perspectives.
+<img src="https://user-images.githubusercontent.com/66386520/120623599-287b3600-c460-11eb-993e-c18827717b69.png" width="70%" height="70%">
 
-* 1D oscillation gedämpft/ungedämpft
+* 2D single ion oscillation: (a) undamped, no friction (b) damped, with friction
+<img src="https://user-images.githubusercontent.com/66386520/120625193-befc2700-c461-11eb-8c3c-ad5f6195811a.png" width="70%" height="70%">
 
-* RF heating / energy
-
+* RF heating: kinetic energy of ion system (a) undamped, no friction (b) damped, with friction
+<img src="https://user-images.githubusercontent.com/66386520/120625213-c3284480-c461-11eb-8dc0-6eee513425f5.png" width="70%" height="70%">
 
 
 ## The Evaluation
@@ -71,7 +73,7 @@ It is possible to choose between evaluating only the results of the most recentl
 
 # Output
 
-All output files generated will be saved automatically within the aforementioned folder structure. The evaluation results are stored in a separate folder called "phase diagrams". Please note that diagrams are overwritten each time you re-run the evaluation and select different filters.
+All output files generated will be saved automatically within the aforementioned folder structure. The evaluation results are stored in a separate folder called "phase diagrams". Please note that diagrams are overwritten each time you re-run the evaluation and select different filters. Phase diagrams based on all available results (results_complete.txt) have "results_complete_" appended to their file names, while phase diagrams based only on the latest simulation run do not.
 
 # Examples
 
