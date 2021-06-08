@@ -33,21 +33,21 @@ A selection of core parameters takes arrays as input type, which allows one to s
 
 Running the simulation will always yield a "results.txt" file, which is saved according to the folder structure mentioned above, and these results are always added to the "results_complete.txt" contained in the same folder. Each individual simulation is saved as one column in the text file, where values are stored in rows as follows:
 
-0 = Index
-1 = U (amplitude of RF field)
-2 = N (total number of ions)
-3 = f (frequency of RF field)
-4 = q-value
-5 = U_eff (effective potential of RF field)
-6 = delta_E (energy resolution)
-7 = ions_escaped
-8 = beta (friction coefficient used to simulate collision cooling effect)
-9 = n (ion amount in beam)
-10 = ion percent in beam
-11 = pulse duration (In case of U_rect: only valid for cycleList with one dipole pulse (0, ..., 0, +1, -1, 0, ..., 0))
-12 = pause duration
-13 = ion cloud max radius
-14 = duty cycle of pulse mode (defined as duty_cycle = (pause_duration - 1e-6) / (pause_duration + pulse_duration))
+0 = Index  
+1 = U (amplitude of RF field)  
+2 = N (total number of ions)  
+3 = f (frequency of RF field)  
+4 = q-value  
+5 = U_eff (effective potential of RF field)  
+6 = delta_E (energy resolution)  
+7 = ions_escaped  
+8 = beta (friction coefficient used to simulate collision cooling effect)  
+9 = n (ion amount in beam)  
+10 = ion percent in beam  
+11 = pulse duration (In case of U_rect: only valid for cycleList with one dipole pulse (0, ..., 0, +1, -1, 0, ..., 0))  
+12 = pause duration  
+13 = ion cloud max radius  
+14 = duty cycle of pulse mode (defined as duty_cycle = (pause_duration - 1e-6) / (pause_duration + pulse_duration))  
 
 In addition to that, many more output options are available and can be activated through the simulation settings. This includes plot options, such as ion trajectories within the trap geometry or the kinetic, potential and total energy of the system. The exact position coordinates of all ions may also be saved as a text file with x/y/z coordinates saved to separate text files, however, please note that these text files can easily become very large for many ions and may take a long time to save.
 
