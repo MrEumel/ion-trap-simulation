@@ -81,22 +81,25 @@ All output files generated will be saved automatically within the aforementioned
 <img src="https://user-images.githubusercontent.com/66386520/120635985-616dd780-c46d-11eb-8948-ea7e6044ca0d.png" width="70%" height="70%">
 
 * Cloud stability: Phase diagram of all simulated q and beta values for (a) no magnetic field and (b) a static magnetic field. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions.
-
+ <img src="https://user-images.githubusercontent.com/66386520/121773226-bcdd4b00-cb7a-11eb-9e94-69ac580fed16.png" width="70%" height="70%">
 
 * Ion density: Ion amount within the relevant target area plotted against beta (a) for all q-values (b) filtered for q = 0.1. Ion amount plotted against q (c) for all beta values (d) filtered for fixed beta value.
  <img src="https://user-images.githubusercontent.com/66386520/120636121-8a8e6800-c46d-11eb-849c-3ce6a4d881e2.png" width="70%" height="70%">
  
  * Duty cycle: When operating in dipole-pulse-mode with varying pause durations between pulses, the q-value no longer accurately describes the system. For this mode, the duty cycle is introduced and defined as (pause_duration - 1e-6) / (pause_duration + pulse_duration). However, since the dipole mode still utilizes a variation of frequency values (which are also used to vary q-values) and fixed timestep values (delta_t) to calculate period durations, resulting duty cycles are merely skewed q-values. This is illustrated graphically below. Therefore, we are going to use q-values even for dipole simulations for the purpose of comparing different modes stabilities. 
- <img src="https://user-images.githubusercontent.com/66386520/120638922-10f87900-c471-11eb-8264-d24057469420.png" width="70%" height="70%">
+ <img src="https://user-images.githubusercontent.com/66386520/121773252-f6ae5180-cb7a-11eb-8b4f-2e518fe8276b.png" width="70%" height="70%">
  
- * Comparing cloud stability: All simulated combinations of beta and q values drawn in a phase diagram for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions.
+ * Comparing cloud stability: All simulated combinations of beta and q values drawn in a phase diagram for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions. As one can see, dipole mode and rectangle mode with a [1, -1, 1, -1] pattern are the two most stable operating modes as beta values decrease. 
+ <img src="https://user-images.githubusercontent.com/66386520/121773260-05950400-cb7b-11eb-8ae2-ba58503d22c5.png" width="70%" height="70%">
 
-* Comparing cloud density: Ion amount within the relevant target area plotted against q-values with fixed beta for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern.
+* Comparing cloud density: Ion amount within the relevant target area plotted against q-values with fixed beta for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern. The q-values are not actually applicable to dipole mode as elaborated above, and increasing q-values for dipole mode result in longer (field-free) pauses between amplitude pulses, which explains the decreasing ion density in the center of the trap. While ion density in dipole mode may be significantly lower than that of other modes, the field-free time periods between pulses are highly advantagous for the purpose of extracting released electrons from within the ion trap. 
+<img src="https://user-images.githubusercontent.com/66386520/121773264-09288b00-cb7b-11eb-8921-8963746eba88.png" width="70%" height="70%">
+
 
 ## Work in progress: Electron simulation
 
-It is possible to use the existing simulation code to simulate electron trajectories instead of ion trajectories by changing the parameters accordingly. To do this, one needs to change the particle mass to 0.00054858 amu and the friction coefficient beta is set to zero. Random starting velocities for the particles should also be activated. Most importantly, the number of integration steps per period needs to be significantly higher than it is for ions. 
+It is possible to use the existing simulation code to simulate electron trajectories instead of ion trajectories by changing the parameters accordingly. To do this, one needs to change the particle mass to 0.00054858 amu and the friction coefficient beta is set to zero. Random starting velocities for the particles should also be activated. Most importantly, the number of integration steps per period needs to be significantly higher than it is for ions because the electron mass is significantly less than that of the ion (amu = 550) simulated previously. As of now, it seems as though the current code does not allow for such a large number of integration steps per period because the electron's resulting trajectory arrays become too large for memory to handle.
 
 The practical purpose of such a simulation is to determine reasonable parameters that allow for the extraction of electrons created within the trap through the use of a divergent magnetic field. This divergent magnetic field can be activated and modelled as needed within the program settings.
 
-This is currently still a work in progress and reasonable working parameters still need to be explored.
+This is currently still a work in progress.
