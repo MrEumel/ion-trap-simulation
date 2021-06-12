@@ -78,9 +78,9 @@ All output files generated will be saved automatically within the aforementioned
 # Examples
 
 * Cloud radius: Plotted against beta (a) for all q-values (b) filtered for q = 0.1 and plotted against q-values (c) for all beta (d) filtered for one beta value. As one can see, beta has little impact on the cloud radius (and therefore ion density) whereas q-value has a significant impact on ion density.
-<img src="https://user-images.githubusercontent.com/66386520/120635985-616dd780-c46d-11eb-8948-ea7e6044ca0d.png" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/66386520/121774020-214ed900-cb80-11eb-91fb-0faf064fde1a.png" width="70%" height="70%">
 
-* Cloud stability: Phase diagram of all simulated q and beta values for (a) no magnetic field and (b) a static magnetic field. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions.
+* Cloud stability: Phase diagram of all simulated q and beta values for (a) no magnetic field and (b) a static magnetic field. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions. As one can see, current results indicate little to no impact of the magnetic field on ion cloud stability.
  <img src="https://user-images.githubusercontent.com/66386520/121773226-bcdd4b00-cb7a-11eb-9e94-69ac580fed16.png" width="70%" height="70%">
 
 * Ion density: Ion amount within the relevant target area plotted against beta (a) for all q-values (b) filtered for q = 0.1. Ion amount plotted against q (c) for all beta values (d) filtered for fixed beta value.
