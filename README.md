@@ -1,6 +1,6 @@
 # Simulation of ions in a linear ion trap
 
-This program may be used to simulate and visualize ion trajectories inside a linear ion trap with many different operation modes and analytic features. In contrast to commercial ion trajectory simulation software, this program solves the equations of motion using a very simple integration method (the Euler-method), allowing one to simulate the behaviour of complex ion clouds consisting of up to thousands of ions with relatively little computing time.
+This program may be used to simulate and visualize ion trajectories inside a linear ion trap with many different operation modes and analytic features. In contrast to commercial ion trajectory simulation software, this program solves the equations of motion using a very simple integration method (Euler-method), allowing one to simulate the behaviour of complex ion clouds consisting of up to thousands of ions with relatively little computing power and time.
 
 ## Getting started
 
@@ -11,7 +11,7 @@ Open the "Simulation.py" file using your preferred Python IDE. Before you run th
 The file is separated into two main functions:
 
 1. Simulation: The equations of motion are solved for all ions, their trajectories as well as the total energy of the system may be plotted, and results are saved in a text file.
-2. Evaluation: This reads the text file containing the relevant simulation results and offers several commonly used phase diagram plots, which allows the evaluation and comparison of different parameters' impact on the stability of the ion cloud.
+2. Evaluation: This reads the text file containing the relevant simulation results and offers several commonly used phase diagram plots, which allow the evaluation and comparison of different parameters' impact on the stability of the ion cloud.
 
 These two functions can be turned on or off individually in the Evaluation settings under the General tab. The evaluation function checks for an existing results text file for the combination of parameters specified in the settings. As such, evaluation will fail when the simulation function is skipped **and** no relevant results from previous simulations exist. 
 
@@ -25,9 +25,9 @@ The results of any given simulation and/or evaluation are automatically stored i
 
 # Settings
 
-At the beginning of the code, the sections titled "Simulation settings" offers various options to specify the geometric properties of the ion trap, operating modes and their parameters. Settings may be activated by setting to "1" and deactivated by setting to "0". Please note that activating more than one RF amplitude mode at a time may cause unreasonable results, same applies to activating more than one beta (friction coefficient) mode. 
+At the beginning of the code, the sections titled "Simulation settings" offers various options to specify the geometric properties of the ion trap, operating modes and their parameters. Settings may be activated by setting their value to "1" and deactivated by setting it to "0". Please note that activating more than one RF amplitude mode at a time may cause unrealistic results, same applies to activating more than one beta (friction coefficient) mode. 
 
-A selection of core parameters takes arrays as input type, which allows one to specify multiple values as input. In this case, the program will iterate through and simulate all possible combinations of given values. For each combination of values, selected plots of the individual simulation are saved in a separate folder, while the key properties of all simulations performed are saved as individual columns in one results text file named "results.txt". In addition to that, a "results_complete.txt" file is created, which contains **all** simulation results with the chosen combination of settings. New simulation results are always automatically appended as columns in the "results_complete.txt" file. 
+A selection of core parameters takes arrays as input type, which allows one to specify multiple values as input. In this case, the program will iterate through and simulate all possible combinations of given values. For each combination of values, selected plots of the individual simulation are saved in a separate folder, while the key properties of all simulations performed are saved as individual columns in one results text file named "results.txt". 
 
 # Output
 
@@ -73,7 +73,7 @@ It is possible to choose between evaluating only the results of the most recentl
 
 # Output
 
-All output files generated will be saved automatically within the aforementioned folder structure. The evaluation results are stored in a separate folder called "phase diagrams". Please note that diagrams are overwritten each time you re-run the evaluation and select different filters. Phase diagrams based on all available results (results_complete.txt) have "results_complete_" appended to their file names, while phase diagrams based only on the latest simulation run do not.
+All output files generated will be saved automatically within the aforementioned folder structure. The evaluation results are stored in a separate folder called "phase diagrams". Please note that diagrams are overwritten each time you re-run the evaluation and select different filters. Phase diagrams based on all available results (results_complete.txt) have "complete_results_" appended to their file names, while phase diagrams based only on the latest simulation run do not.
 
 # Examples
 
@@ -92,9 +92,8 @@ All output files generated will be saved automatically within the aforementioned
  * Comparing cloud stability: All simulated combinations of beta and q values drawn in a phase diagram for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern. Blue dots represent valid (stable) solutions, red dots represent invalid (unstable) solutions. As one can see, dipole mode and rectangle mode with a [1, -1, 1, -1] pattern are the two most stable operating modes as beta values decrease. 
  <img src="https://user-images.githubusercontent.com/66386520/121773260-05950400-cb7b-11eb-8ae2-ba58503d22c5.png" width="70%" height="70%">
 
-* Comparing cloud density: Ion amount within the relevant target area plotted against q-values with fixed beta for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern. The q-values are not actually applicable to dipole mode as elaborated above, and increasing q-values for dipole mode result in longer (field-free) pauses between amplitude pulses, which explains the decreasing ion density in the center of the trap. While ion density in dipole mode may be significantly lower than that of other modes, the field-free time periods between pulses are highly advantagous for the purpose of extracting released electrons from within the ion trap. 
+* Comparing cloud density: Ion amount within the relevant target area plotted against q-values with fixed beta for (a) cosine mode (b) dipole mode (c) rectangle mode with [1,-1,1,-1] amplitude pattern (d) rectangle mode with [1, 0, -1, 0] amplitude pattern. The q-values are not actually applicable to dipole mode as elaborated above, and increasing q-values for dipole mode result in longer (field-free) pauses between amplitude pulses, which explains the decreasing ion density in the center of the trap. While ion density in dipole mode may be significantly lower than that of other modes, the field-free time periods between pulses are highly advantagous for the purpose of extracting electrons from within the ion trap. 
 <img src="https://user-images.githubusercontent.com/66386520/121773264-09288b00-cb7b-11eb-8921-8963746eba88.png" width="70%" height="70%">
-
 
 ## Work in progress: Electron simulation
 
@@ -102,4 +101,4 @@ It is possible to use the existing simulation code to simulate electron trajecto
 
 The practical purpose of such a simulation is to determine reasonable parameters that allow for the extraction of electrons created within the trap through the use of a divergent magnetic field. This divergent magnetic field can be activated and modelled as needed within the program settings.
 
-This is currently still a work in progress.
+This is currently a work in progress.
